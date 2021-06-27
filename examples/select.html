@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panel</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <script type="module">
+
+        import * as pcui from '../pcui/pcui.mjs';
+
+        let selectBox = new pcui.SelectInput({
+            width: 260,
+            options: [
+                { v: 1, t: 'box' },
+                { v: 2, t: 'cylinder' },
+                { v: 3, t: 'sphere' },
+                { v: 4, t: 'cone' }
+            ],
+            value: 1
+        });
+
+        selectBox.on('change', (value) => {
+            console.log(selectBox.value);
+        });
+
+        document.body.appendChild(selectBox.dom);
+
+    </script>
+</body>
+
+</html>
