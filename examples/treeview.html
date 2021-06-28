@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panel</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <script type="module">
+
+        import * as pcui from '../pcui/pcui.mjs';
+
+        let treeView = new pcui.Panel({
+            headerText: 'Hierarchy',
+            width: 260,
+            height: 300,
+            collapsible: true,
+            scrollable: true,
+            /* resizable: 'right',
+            resizeMin: 260,
+            resizeMax: 516, */
+        });
+        document.body.appendChild(treeView.dom);
+
+        let container = new pcui.TreeView({
+            // enabled
+            // dom
+            // parent
+            // hidden
+            // hiddenToRoot
+            // readOnly
+            // ignoreParent
+            // width: 260,
+            // height
+            // tabIndex
+            // error
+            // binding
+            // style
+            // class
+            // flex
+            // grid
+            // scrollable: true,
+            // resizeMin
+            // resizeMax
+            // resizable
+            // allowDrag
+            // allowReordering
+            // allowRenaming
+            // isDragging
+            // filter
+            // selected
+        });
+        treeView.append(container);
+
+        let item1 = new pcui.TreeViewItem({
+            text: 'item1'
+        });
+        container.append(item1);
+        let item1_1 = new pcui.TreeViewItem({
+            text: 'item1-1'
+        });
+        item1.append(item1_1);
+        item1_1.on('mousedown', (e) => {
+            console.log('');
+        });
+        for (let i = 0; i < 6; i++) {
+            item1.append(new pcui.TreeViewItem({
+                text: `item1-${i + 2}`
+            }));
+        }
+
+        let item2 = new pcui.TreeViewItem({
+            text: 'item2'
+        });
+        for (let i = 0; i < 6; i++) {
+            item2.append(new pcui.TreeViewItem({
+                text: `item1-${i + 1}`
+            }));
+        }
+        container.append(item2);
+
+
+    </script>
+</body>
+
+</html>
