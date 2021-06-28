@@ -12,3 +12,26 @@ body {
     color: #eee;
     color: #b1b8ba;
 }
+
+/* == scrollbar style == */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #20292b
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5b7073
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f60
+}
+
+::-webkit-scrollbar-corner {
+    background: #2c393c
+}
